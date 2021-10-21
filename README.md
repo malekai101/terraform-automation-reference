@@ -63,6 +63,10 @@ To turn down a project, the administrator would remove the tf file for the proje
 
 As stated in the beginning of this documentation, this code is demonstration code.  One could build upon this foundation but there are other approaches which are more robust and offer more flexibility.
 
+### Dynamic Secrets
+
+The code presented here is using static variables to configure authentication with AWS and Azure.  The configuration modules could build template code and configure Hashicorp Vault for dynamic secrets usage.  Instead of storing static credentials in TFC, Vault would build [AWS](https://www.vaultproject.io/docs/secrets/aws) and [Azure](https://www.vaultproject.io/docs/secrets/azure) credentials for the provisioning workspaces at runtime.
+
 ### Triggered Workspaces
 
 One way to make the Terraform managed by Terraform approach more robust is to use [run triggers](https://www.terraform.io/docs/cloud/workspaces/run-triggers.html).  Rather than defining and running everything in one workspace, duties could be separated out into multiple workspaces which trigger applies in one another.  For example, in this example the Sentinel policies are defined in the same project as the workspaces and GitHub repositories.  This might not be optional from a separation of duties and least privilege perspective.  Instead of defining everything on one project, the Sentinel policy Terraform code could be in another project and configured to execute when the main workspace executes.  In that workflow, workspaces could be created with tags and the Sentinel workspace would assign policies based on those tags.
