@@ -4,7 +4,7 @@ resource "tfe_policy_set" "azure_web_set" {
   organization  = "csmith"
   policies_path = "/azure"
   workspace_ids = [
-    //module.test-repo.tfc_workspace_id
+    module.test-repo.tfc_workspace_id
   ]
 
   vcs_repo {
@@ -21,7 +21,7 @@ resource "tfe_policy_set" "aws_web_set" {
   organization  = "csmith"
   policies_path = "/aws"
   workspace_ids = [
-    //module.test-repo.tfc_workspace_id
+    module.test-repo.tfc_workspace_id
   ]
 
   vcs_repo {
