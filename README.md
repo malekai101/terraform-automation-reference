@@ -29,7 +29,7 @@ The providers file contains the providers for Terraform Cloud and GitHub.  The T
 
 ### <span>test_project.tf</span>
 
-The test project file is a sample on a file onboarding a project.  Modules are instantiated from the Terraform Cloud Private Module Registry.  The modules in use in this file are demo modules the code for which is shared publicly.
+The test project file is a sample on a file onboarding a project.  Modules are instantiated from the Terraform Cloud Private Module Registry.  The modules in use in this file are demo modules the code for which is shared publicly.  If one were to build upon this code, they would need to upload the modules into their TFC private module registry (code locations included below) and change the `source` and `version` properties to match the new registry.
 
 #### The Workspace and Repo Module
 

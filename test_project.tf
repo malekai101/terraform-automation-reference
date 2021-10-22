@@ -1,4 +1,9 @@
 module "test-repo" {
+  /*
+  Note that the module will need to be uploaded to your TFC private module
+  registry before use.  The source property will change to the location
+  in your module registry.
+  */
   source  = "app.terraform.io/csmith/developer-repo/github"
   version = "1.0.4"
   # insert required variables here
@@ -12,6 +17,11 @@ module "test-repo" {
 }
 
 module "workspace-config-azure" {
+  /*
+  Note that the module will need to be uploaded to your TFC private module
+  registry before use.  The source property will change to the location
+  in your module registry.
+  */
   source  = "app.terraform.io/csmith/workspace-config-azure/tfe"
   version = "1.0.0"
   # insert required variables here
@@ -27,6 +37,11 @@ module "workspace-config-azure" {
 }
 
 module "workspace-config-aws" {
+  /*
+  Note that the module will need to be uploaded to your TFC private module
+  registry before use.  The source property will change to the location
+  in your module registry.
+  */
   source  = "app.terraform.io/csmith/workspace-config-aws/tfe"
   version = "1.0.1"
   # insert required variables here
